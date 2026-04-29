@@ -1,15 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.34;
+pragma solidity 0.8.28;
 
 interface IDrainer {
-    /**
-     * @notice Initiates the vault exploit sequence and splits proceeds.
-     * @param nonce Cryptographic scalar for proof generation.
-     */
-    function attack(uint256 nonce) external;
-
-    /**
-     * @notice Distributes the contract's ETH balance to pre-configured recipients.
-     */
+    function attack(uint256 _guess, uint256 _round, uint256 _nonce) external payable;
     function distribute() external;
 }
